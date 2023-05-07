@@ -36,6 +36,11 @@ function Header() {
                   Explore
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/products" className="nav-link" replace onClick={changeNav}>
+                  Orders
+                </Link>
+              </li>
             </ul>
             <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline">
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
