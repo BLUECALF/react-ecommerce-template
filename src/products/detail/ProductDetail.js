@@ -1,4 +1,4 @@
-import Image from "../../nillkin-case-1.jpg";
+import { products } from "../ProductList";
 import RelatedProduct from "./RelatedProduct";
 import Ratings from "react-ratings-declarative";
 import { Link ,useParams} from "react-router-dom";
@@ -14,6 +14,15 @@ function ProductDetail() {
     console.log(params)
     console.log("id is : "+ params["id"])
 
+    const id = params["id"];
+    // getting product where id is that in the params
+
+    let filteredList = products.filter(item => item.id === Number(id));
+    const product = filteredList[0];
+    console.log("filtered list is " + filteredList);
+    console.log("product is " + product);
+    console.log("product name  is " + product.name);
+
   return (
     <div className="container mt-5 py-4 px-xl-5">
       <ScrollToTopOnMount/>
@@ -21,7 +30,7 @@ function ProductDetail() {
         <ol className="breadcrumb p-3">
           <li className="breadcrumb-item">
             <Link className="text-decoration-none link-secondary" to="/products">
-              All Prodcuts
+              All Products
             </Link>
           </li>
           <li className="breadcrumb-item">
@@ -30,7 +39,7 @@ function ProductDetail() {
             </a>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Nillkin iPhone X cover
+            {product.name}
           </li>
         </ol>
       </nav>
@@ -45,7 +54,7 @@ function ProductDetail() {
                     <img
                       className={"rounded mb-2 ratio " + selected}
                       alt=""
-                      src={Image}
+                      src={product.image}
                     />
                   </a>
                 );
@@ -59,39 +68,16 @@ function ProductDetail() {
               <img
                 className="border rounded ratio ratio-1x1"
                 alt=""
-                src={Image}
+                src={product.image}
               />
             </div>
           </div>
-
-          {/* <div className="row mt-2">
-            <div className="col-12">
-              <div
-                className="d-flex flex-nowrap"
-                style={{ overflowX: "scroll" }}
-              >
-                {Array.from({ length: 8 }, (_, i) => {
-                  return (
-                    <a key={i} href="!#">
-                      <img
-                        className="cover rounded mb-2 me-2"
-                        width="70"
-                        height="70"
-                        alt=""
-                        src={Image}
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <div className="col-lg-5">
           <div className="d-flex flex-column h-100">
-            <h2 className="mb-1">Nillkin iPhone X cover</h2>
-            <h4 className="text-muted mb-4">10000 Ks</h4>
+            <h2 className="mb-1"> {product.name} </h2>
+            <h4 className="text-muted mb-4">{product.price + "KES"}</h4>
 
             <div className="row g-3 mb-4">
               <div className="col">
@@ -108,22 +94,22 @@ function ProductDetail() {
             <hr />
             <dl className="row">
               <dt className="col-sm-4">Code</dt>
-              <dd className="col-sm-8 mb-3">C0001</dd>
+              <dd className="col-sm-8 mb-3">{product.sku}</dd>
 
               <dt className="col-sm-4">Category</dt>
-              <dd className="col-sm-8 mb-3">Cases & Covers</dd>
+              <dd className="col-sm-8 mb-3">{product.category}</dd>
 
               <dt className="col-sm-4">Brand</dt>
-              <dd className="col-sm-8 mb-3">iPhone X</dd>
+              <dd className="col-sm-8 mb-3">{product.brand}</dd>
 
               <dt className="col-sm-4">Manufacturer</dt>
-              <dd className="col-sm-8 mb-3">Nillkin</dd>
+              <dd className="col-sm-8 mb-3">{product.brand}</dd>
 
               <dt className="col-sm-4">Color</dt>
               <dd className="col-sm-8 mb-3">Red, Green, Blue, Pink</dd>
 
               <dt className="col-sm-4">Status</dt>
-              <dd className="col-sm-8 mb-3">Instock</dd>
+              <dd className="col-sm-8 mb-3">{product.amount > 0? "Instock" : "Out of Stock"}</dd>
 
               <dt className="col-sm-4">Rating</dt>
               <dd className="col-sm-8 mb-3">
@@ -152,15 +138,7 @@ function ProductDetail() {
             <hr />
             <p className="lead flex-shrink-0">
               <small>
-                Nature (TPU case) use environmental non-toxic TPU, silky smooth
-                and ultrathin. Glittering and translucent, arbitrary rue
-                reserved volume button cutouts, easy to operate. Side frosted
-                texture anti-slipping, details show its concern; transparent
-                frosted logo shows its taste. The release of self, the flavor of
-                life. Nillkin launched Nature transparent soft cover, only to
-                retain the original phone style. Subverting tradition,
-                redefinition. Thinner design Environmental texture better hand
-                feeling.
+              {product.description}
               </small>
             </p>
           </div>

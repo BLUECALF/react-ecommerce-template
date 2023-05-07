@@ -1,4 +1,3 @@
-import Image from "../nillkin-case-1.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -28,7 +27,7 @@ function Product(props) {
   return (
     <div className="col">
       <div className="card shadow-sm">
-        <Link to="/products/1" href="!#" replace>
+        <Link to= {"/products/" + productData.id} href="!#" replace>
           {percentOff}
           <img
             className="card-img-top bg-dark cover"
