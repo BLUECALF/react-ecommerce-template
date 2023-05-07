@@ -291,7 +291,7 @@ function ProductList() {
             >
 
               {products.map((product, index) => (
-                                  <Product key={index} percentOff = {3 % 2 === 0 ? 15 : null} product = {product} />
+                                  <Product key={index} percentOff = {3 % 2 === 0 ? 15 : null} product = {product} addToCart = {props.addToCart}/>
                           ))}
             </div>
             <div className="d-flex align-items-center mt-auto">
