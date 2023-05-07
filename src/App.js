@@ -2,7 +2,7 @@ import Template from "./template/Template";
 import ProductDetail from "./products/detail/ProductDetail";
 import { Switch, Route } from "react-router-dom";
 import Landing from "./landing/Landing";
-import ProductList from "./products/ProductList";
+import {ProductList} from "./products/ProductList";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Route path="/products" exact>
           <ProductList />
         </Route>
-        <Route path="/products/:slug">
+        <Route path="/products/:id">
           <ProductDetail />
         </Route>
         <Route path="/" exact>

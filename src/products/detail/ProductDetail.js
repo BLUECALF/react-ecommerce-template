@@ -1,7 +1,7 @@
 import Image from "../../nillkin-case-1.jpg";
 import RelatedProduct from "./RelatedProduct";
 import Ratings from "react-ratings-declarative";
-import { Link } from "react-router-dom";
+import { Link ,useParams} from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
 
 const iconPath =
@@ -9,6 +9,10 @@ const iconPath =
 
 function ProductDetail() {
   function changeRating(newRating) {}
+
+  const params = useParams()
+    console.log(params)
+    console.log("id is : "+ params["id"])
 
   return (
     <div className="container mt-5 py-4 px-xl-5">

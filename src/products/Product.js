@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Product(props) {
-  const price = 10000;
+  const price = props.product.price;
   let percentOff;
   let offPrice = `${price}Ks`;
+
 
   if (props.percentOff && props.percentOff > 0) {
     percentOff = (
@@ -16,13 +17,13 @@ function Product(props) {
         {props.percentOff}% OFF
       </div>
     );
-
     offPrice = (
       <>
         <del>{price}Ks</del> {price - (props.percentOff * price) / 100}Ks
       </>
     );
   }
+  let productData = props.product;
 
   return (
     <div className="col">
@@ -33,12 +34,12 @@ function Product(props) {
             className="card-img-top bg-dark cover"
             height="200"
             alt=""
-            src={Image}
+            src={productData.image}
           />
         </Link>
         <div className="card-body">
           <h5 className="card-title text-center text-dark text-truncate">
-            Nillkin iPhone X cover
+            {productData.name}
           </h5>
           <p className="card-text text-center text-muted mb-0">{offPrice}</p>
           <div className="d-grid d-block">

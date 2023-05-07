@@ -6,17 +6,53 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ScrollToTopOnMount from "../template/ScrollToTopOnMount";
 
 const categories = [
-  "All Products",
-  "Phones & Tablets",
-  "Cases & Covers",
-  "Screen Guards",
-  "Cables & Chargers",
-  "Power Banks",
+  "handbags",
+  "shoes",
+  "duvets",
 ];
 
-const brands = ["Apple", "Samsung", "Google", "HTC"];
+const brands = ["nike", "jordan", "bata", "timberland"];
 
-const manufacturers = ["HOCO", "Nillkin", "Remax", "Baseus"];
+const manufacturers = ["nike", "Nillkin", "Remax", "Baseus"];
+
+
+const products = [
+  {
+    id: 1,
+    name: 'Leather Tote Bag',
+    description: 'This is a stylish and spacious leather tote bag perfect for everyday use.',
+    image: 'https://www.kindpng.com/picc/m/194-1942112_women-bag-png-hd-ladies-bag-png-transparent.png',
+    price: 129.99,
+    amount: 5,
+    category: 'Bags',
+    brand: 'Brand X',
+    sku: 'SKU001',
+  },
+  {
+    id: 2,
+    name: 'Crossbody Bag',
+    description: 'This is a chic and compact crossbody bag perfect for a night out.',
+    image: 'https://www.kindpng.com/picc/m/194-1942112_women-bag-png-hd-ladies-bag-png-transparent.png',
+    price: 49.99,
+    amount: 10,
+    category: 'Bags',
+    brand: 'Brand Y',
+    sku: 'SKU002',
+  },
+  {
+    id: 3,
+    name: 'Satchel Bag',
+    description: 'This is a classic satchel bag perfect for work or school.',
+    image: 'https://www.kindpng.com/picc/m/194-1942112_women-bag-png-hd-ladies-bag-png-transparent.png',
+    price: 79.99,
+    amount: 8,
+    category: 'Bags',
+    brand: 'Brand Z',
+    sku: 'SKU003',
+  },
+  // Add more products as needed
+];
+
 
 function FilterMenuLeft() {
   return (
@@ -222,16 +258,10 @@ function ProductList() {
                 (viewType.grid ? "row-cols-xl-3" : "row-cols-xl-2")
               }
             >
-              {Array.from({ length: 10 }, (_, i) => {
-                if (viewType.grid) {
-                  return (
-                    <Product key={i} percentOff={i % 2 === 0 ? 15 : null} />
-                  );
-                }
-                return (
-                  <ProductH key={i} percentOff={i % 4 === 0 ? 15 : null} />
-                );
-              })}
+
+              {products.map((product, index) => (
+                                  <Product key={index} percentOff = {3 % 2 === 0 ? 15 : null} product = {product} />
+                          ))}
             </div>
             <div className="d-flex align-items-center mt-auto">
               <span className="text-muted small d-none d-md-inline">
@@ -274,4 +304,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export {ProductList, products};
