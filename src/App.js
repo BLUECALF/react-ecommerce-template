@@ -20,7 +20,18 @@ function App() {
       category: 'Bags',
       brand: 'Michael Kors',
       sku: 'SKU001',
-    }, 
+    },
+    {
+      id: 2,
+      name: 'Crossbody Bag',
+      description: 'This is a chic and compact crossbody bag perfect for a night out.',
+      image: 'https://cdn.pixabay.com/photo/2015/08/10/20/14/purse-883112__340.jpg',
+      price: 49.99,
+      amount: 10,
+      category: 'Bags',
+      brand: 'Coach',
+      sku: 'SKU002',
+    },
   ]);
 
   const addToCart = (product) => {
@@ -40,6 +51,7 @@ function App() {
     console.log("Cart data is" + cartItems);
   };
   const removeOneFromCart = (product) => {
+    console.log("remove 1 called");
     const existingProduct = cartItems.find((p) => p.id === product.id);
   
     if (existingProduct) {
@@ -60,6 +72,7 @@ function App() {
     }
   };
   const removeProductFromCart = (product) => {
+    console.log("remove all called");
     const updatedCart = cartItems.filter((p) => p.id !== product.id);
     setCartItems(updatedCart);
   };
