@@ -9,30 +9,7 @@ import { useState } from 'react';
 function App() {
 
   /// main app should have access to cart items their add and subtractions
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: 'Leather Tote Bag',
-      description: 'This is a stylish and spacious leather tote bag perfect for everyday use.',
-      image: 'https://cdn.pixabay.com/photo/2012/04/14/14/19/handbag-34091__340.png',
-      price: 129.99,
-      amount: 5,
-      category: 'Bags',
-      brand: 'Michael Kors',
-      sku: 'SKU001',
-    },
-    {
-      id: 2,
-      name: 'Crossbody Bag',
-      description: 'This is a chic and compact crossbody bag perfect for a night out.',
-      image: 'https://cdn.pixabay.com/photo/2015/08/10/20/14/purse-883112__340.jpg',
-      price: 49.99,
-      amount: 10,
-      category: 'Bags',
-      brand: 'Coach',
-      sku: 'SKU002',
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
     console.log("Add to cart called");
