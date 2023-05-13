@@ -86,9 +86,6 @@ function ProductDetail(props) {
                   Add to cart
                 </button>
               </div>
-              <div className="col">
-                <button className="btn btn-dark py-2 w-100">Buy now</button>
-              </div>
             </div>
 
             <h4 className="mb-0">Details</h4>
