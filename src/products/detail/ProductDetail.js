@@ -36,7 +36,7 @@ function ProductDetail(props) {
           </li>
           <li className="breadcrumb-item">
             <a className="text-decoration-none link-secondary" href="!#">
-              Cases &amp; Covers
+            Bags,Shoes &amp; Duvets
             </a>
           </li>
           <li className="breadcrumb-item active" aria-current="page">

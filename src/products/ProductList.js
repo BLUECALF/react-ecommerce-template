@@ -187,7 +187,7 @@ function ProductList(props) {
             </Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Cases &amp; Covers
+            Bags,Shoes &amp; Duvets
           </li>
         </ol>
       </nav>
