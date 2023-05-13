@@ -29,7 +29,7 @@ function Cart(props) {
                     <img src={item.image} alt={item.name} style={{ width: '50px', height: '50px' }} />
                     </td>
                     <td>{item.name}</td>
-                    <td>${item.price.toFixed(2)}</td>
+                    <td>${item.price}</td>
                     <td>
                       <button className="btn btn-secondary btn-sm" onClick={() => onReduce(item)}>
                         -
@@ -50,7 +50,7 @@ function Cart(props) {
               <tfoot>
                 <tr>
                   <td colSpan="5" className="text-right">
-                    Total: ${cartItems.reduce((acc, item) => acc + item.price * item.amount, 0).toFixed(0)}
+                    Total: ${cartItems.reduce((acc, item) => acc + item.price * item.amount, 0)}
                   </td>
                 </tr>
               </tfoot>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Product(props) {
   const price = props.product.price;
+  const addToCart = props.addToCart;
   let percentOff;
   let offPrice = `${price}Ks`;
 
@@ -42,7 +43,7 @@ function Product(props) {
           </h5>
           <p className="card-text text-center text-muted mb-0">{offPrice}</p>
           <div className="d-grid d-block">
-            <button className="btn btn-outline-dark mt-3" onClick={props.addToCart}>
+            <button className="btn btn-outline-dark mt-3" onClick={() => addToCart(productData)}>
               <FontAwesomeIcon icon={["fas", "cart-plus"]} /> Add to cart
             </button>
           </div>
