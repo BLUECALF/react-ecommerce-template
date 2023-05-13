@@ -45,7 +45,7 @@ function Header(props) {
             <Link to="/cart"replace onClick={changeNav}>
             <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline">
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
-              <span className="ms-3 badge rounded-pill bg-dark">0</span>
+              <span className="ms-3 badge rounded-pill bg-dark">{props.count}</span>
             </button>
                 </Link>
             
@@ -84,7 +84,7 @@ function Header(props) {
           <div className="d-inline-block d-lg-none">
             <button type="button" className="btn btn-outline-dark">
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
-              <span className="ms-3 badge rounded-pill bg-dark">{props.counter}</span>
+              <span className="ms-3 badge rounded-pill bg-dark"></span>
             </button>
             <button className="navbar-toggler p-0 border-0 ms-3" type="button" onClick={toggleDrawer}>
               <span className="navbar-toggler-icon"></span>
