@@ -42,7 +42,7 @@ function Header(props) {
                 </Link>
               </li>
             </ul>
-            <Link to="/cart"replace onClick={changeNav}>
+            <Link to="/cart" onClick={changeNav}>
             <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline">
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
               <span className="ms-3 badge rounded-pill bg-dark">{props.count}</span>
