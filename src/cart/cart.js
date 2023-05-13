@@ -50,7 +50,7 @@ function Cart(props) {
               <tfoot>
                 <tr>
                   <td colSpan="5" className="text-right">
-                    Total: ${cartItems.reduce((acc, item) => acc + item.price * item.amount, 0).toFixed(2)}
+                    Total: ${cartItems.reduce((acc, item) => acc + item.price * item.amount, 0).toFixed(0)}
                   </td>
                 </tr>
               </tfoot>

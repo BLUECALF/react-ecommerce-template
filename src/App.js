@@ -70,6 +70,8 @@ function App() {
   
       setCartItems(updatedCart);
     }
+    console.log("lenght is"+ cartItems.length);
+    console.log("Cart data is" + cartItems);
   };
   const removeProductFromCart = (product) => {
     console.log("remove all called");

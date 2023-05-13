@@ -163,7 +163,7 @@ function FilterMenuLeft() {
   );
 }
 
-function ProductList() {
+function ProductList(props) {
   const [viewType, setViewType] = useState({ grid: true });
 
   function changeViewType() {
