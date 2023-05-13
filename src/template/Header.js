@@ -87,7 +87,7 @@ function Header(props) {
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
               <span className="ms-3 badge rounded-pill bg-dark">{props.count}</span>
             </button>
-          </Link>
+            </Link>
             <button className="navbar-toggler p-0 border-0 ms-3" type="button" onClick={toggleDrawer}>
               <span className="navbar-toggler-icon"></span>
             </button>
