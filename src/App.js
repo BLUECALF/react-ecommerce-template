@@ -61,7 +61,7 @@ function App() {
           if (updatedQuantity <= 0) {
             return null; // Return null to remove product from cart
           } else {
-            return { ...p, quantity: updatedQuantity };
+            return { ...p, amount: updatedQuantity }; // Update 'quantity' to 'amount' in the returned object
           }
         } else {
           return p;
@@ -70,9 +70,10 @@ function App() {
   
       setCartItems(updatedCart);
     }
-    console.log("lenght is"+ cartItems.length);
-    console.log("Cart data is" + cartItems);
+    console.log("length is " + cartItems.length);
+    console.log("Cart data is " + cartItems);
   };
+  
   const removeProductFromCart = (product) => {
     console.log("remove all called");
     const updatedCart = cartItems.filter((p) => p.id !== product.id);
