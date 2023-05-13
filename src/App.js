@@ -79,10 +79,13 @@ function App() {
     const updatedCart = cartItems.filter((p) => p.id !== product.id);
     setCartItems(updatedCart);
   };
-  
+
+  const totalCount = cartItems.reduce((accumulator, currentItem) => {
+    return accumulator + currentItem.amount;
+  }, 0);  
   
   return (
-    <Template count = {cartItems.length}>
+    <Template count = {totalCount}>
       <Switch>
         <Route path="/products" exact>
           <ProductList  addToCart = {addToCart}/>
